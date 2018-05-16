@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,10 +48,34 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+/* Set every element's box-sizing to
+ border-box */
 * {
     box-sizing: border-box;
 }
+
+// colors
+@header-color: @blue;
+@text-color: @green;
+@footer-text: @pink;
+@font-color: @purple;
+@background-color: @shiraz;
+
+//color assignments
+@blue: #61BDED;
+@green: #61EDCA;
+@pink: #ED61ED;
+@purple:#DA61ED;
+@shiraz: #BB112F
+
+@media(max-width: 768px){
+
+}
+
+@media(max-width: 400px){
+
+}
+
 
 html, body {
     height: 100%;
@@ -62,52 +86,119 @@ h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    
+    
 }
 
 .container {
     width: 880px;
     margin: auto;
-}
+	}
 
 /* Header Styles */
 
 header {
     width: 100%;
     display: flex;
-}
 
+@media(max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: @pink;
+     
+}
+@media(max-width: 400px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: @green;
+    
+}
+}
 header nav {
-    margin-top: 40px; 
+    margin-top: 40px;
     width: 610px;
     justify-content: space-between;
     display: flex;
+
+    @media (max-width: 400px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+
+      }
+      @media (max-width: 768px) {
+        width: 59%;
+        margin-left: 3%;
+      }
+  
+      @media (max-width: 750px) {
+        width: 100%;
+      }
+
 }
 
 header nav a {
     text-decoration: none;
     color: #b0b0b0;
-}
+    transform: skew(10deg, 10deg);
+
+    @media(max-width: 768px) {
+    color: @green;
+    }
+    @media(max-width:400px) {
+        color: @pink;
+    }
+    }
+
 
 header nav a:hover {
     text-decoration: underline;
     color: black;
+    
 }
 
 header .logo {
+
     align-self: flex-end;
     margin: 28px 0 0 91px;
+
+    @media(max-width: 768px){
+        width: 100%;   
+    }
+    @media(max-width: 400px){
+        width: 100%;
+    }
 }
+
+
 
 /* Call To Action (CTA) Styles */
 
 .cta {
+
     display: flex;
     margin-top: 72px;
     justify-content: flex-end;
-}
+    color: @blue;
+
+    @media(max-width: 768px){
+        display: none;
+    }
+    @media(max-width: 400px) {
+        display: none;
+    }
+    }
+
 
 .cta .cta-text {
-    font-size: 72px;
+
+    font-size: 72px-10;
     text-align: center;
     letter-spacing: 5px;
     display: flex;
@@ -118,6 +209,7 @@ header .logo {
 }
 
 .cta .cta-text button {
+    transform: skew(10deg, 10deg);
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -125,17 +217,11 @@ header .logo {
     height: 32px;
     margin-top: 10px;
     cursor: pointer;
+
 }
 
 .cta .cta-text button:hover {
-    background: black;
-    color: white;
-}
-
-/* Main Content Styles */
-
-.main-content {
-   border-top: 2px solid black; 
+   border-top: 2px solid black;
    border-bottom: 2px solid black;
    margin: 75px 0 35px 0;
    padding: 35px 0;
@@ -146,6 +232,7 @@ header .logo {
 .main-content .top-content {
     display: flex;
     justify-content: space-around;
+    
 }
 
 .main-content .middle-img {
@@ -162,9 +249,11 @@ header .logo {
     padding-right: 20px;
 }
 
+
 /* Contact Styles */
 
 .contact p {
+    
     margin: 15px 0;
 }
 
@@ -173,4 +262,5 @@ header .logo {
 footer {
     text-align: center;
     margin: 40px 0 20px;
+    
 }
